@@ -18,8 +18,22 @@
 
 body{
   margin: 0;
-  //font-family: opensans, sans-serif;
+  font-family: Gilroy, sans-serif;
   font-size: 18px;
   line-height: 32px;
-  //color: $grey-blue;
+}
+
+.content-wrapper{
+  max-width: 940px;
+  margin: 0 auto;
+  overflow: visible;
+
+  @media (max-width: $width-tablet) {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: $width-mobile) {
+    margin: 0 20px;
+  }
 }
