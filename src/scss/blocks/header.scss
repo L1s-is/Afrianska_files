@@ -1,78 +1,75 @@
 .header{
   padding: 0;
-  @media (min-width: $width-desktop) {
-    padding: 0 $margin-wrapper-desktop;
-    background-color: rgba($grey-blue, 0.9);
-  }
+  background-color: transparent;
 }
 
-.nav {
-  @media (min-width: $width-desktop) {
-    display: flex;
-    align-items: center;
+.content-wrapper--header{
+  max-width: 1366px;
+  padding: 40px 83px;
+  margin: 0 auto;
+  position: relative;
+
+  @media (max-width: $width-tablet) {
+    padding: 20px 20px;
   }
+
 }
 
 .main__logo{
   display: flex;
   align-items: center;
-  min-height: 70px;
-  width: 100%;
-  padding: 20px;
+  width: min-content;
+  height: min-content;
+  padding: 0;
 
   border-bottom: none;
-  background-color: rgba($grey-blue, 0.9);
+}
 
-  @media (min-width: $width-tablet) {
-    min-height: 110px;
-  }
-  @media (min-width: $width-desktop) {
-    width: min-content;
-    background-color: inherit;
-    padding: 10px 0;
-  }
+.logo__img{
+  width: 48px;
+  height: 32px;
+  position: relative;
+  display: block;
+  vertical-align: middle;
 }
 
 #menu__toggle,
 .menu__btn {
   display: block;
-
-  @media (min-width: $width-desktop) {
-    display: none;
-  }
 }
 
 .nav__list {
-  padding: 0;
+  left: 50%;
+  padding: 60px 0;
   display: block;
   position: fixed;
   z-index: 0;
   visibility: hidden;
-  bottom: 0;
-  top: -120%;
+  top: -100%;
   overflow: auto;
 
-  width: 100%;
-  min-height: 255px;
-  background-color: $grey-blue;
-  color: $white-color;
-
+  width: 50%;
+  max-width: calc(25% + 1366px);
   margin: 0;
+  border-radius: 0 0 0 200px;
+  min-height: 255px;
+  background-color: $blue;
+  color: $white;
+  max-height: 100vh;
 
   list-style: none;
 
   transition-duration: 0.25s;
 
-  @media (min-width: $width-desktop) {
-    display: flex;
-    justify-content: right;
-    gap: 80px;
-    position: relative;
-    visibility: visible;
-    min-height: 110px;
-    align-items: center;
-    border: none;
-    background-color: inherit;
+  @media (max-width: $width-desktop) {
+    width: 80%;
+    left: 20%;
+  }
+
+  @media (max-width: $width-tablet) {
+    min-height: min-content;
+    width: 100%;
+    left: 0;
   }
 }
 
@@ -83,49 +80,52 @@
   text-align: center;
 
   text-decoration: none;
-
+  max-width: 683px;
   transition-duration: 0.25s;
   text-transform: uppercase;
   font-weight: bold;
 
-  @media (min-width: $width-desktop) {
-    border: none;
-  }
-
-  @media (min-width: $width-desktop) {
-    padding: 10px 0;
+  @media (max-width: $width-desktop) {
+    max-width: 80%;
+    margin: 0 auto;
   }
 }
 
-.nav__item:last-of-type {
+/*.nav__item:last-of-type {
   margin-right: 0;
-}
-
-.nav__item:hover {
-  background-color: #CFD8DC;
-}
+}*/
 
 .nav__link{
-  color: $white-color;
+  opacity: 1;
+  color: $white;
   text-decoration: none;
+  transition: all 0.3s ease-in-out;
 }
+
+.nav__link:hover{
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+ }
 
 #menu__toggle {
   opacity: 0;
 }
 
 #menu__toggle:checked ~ .menu__btn > span {
+  background-color: $white;
   transform: rotate(45deg);
   width: 30px;
 }
 
 #menu__toggle:checked ~ .menu__btn > span::before {
+  background-color: $white;
   width: 30px;
   top: 0;
   transform: rotate(0);
 }
 
 #menu__toggle:checked ~ .menu__btn > span::after {
+  background-color: $white;
   width: 30px;
   top: 0;
   transform: rotate(90deg);
@@ -133,7 +133,7 @@
 
 #menu__toggle:checked ~ .nav__list {
   top: 0;
-  position: relative;
+  /*position: relative;*/
   visibility: visible;
 }
 
@@ -141,21 +141,18 @@
   display: flex;
   align-items: center;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 40px;
+  right: 83px;
 
-  width: 50px;
-  height: 24px;
+  width: 24px;
+  height: 32px;
 
   cursor: pointer;
   z-index: 6;
 
-  @media (min-width: $width-tablet) {
-    top: 44px;
-  }
-
-  @media (min-width: $width-desktop) {
-    display: none;
+  @media (max-width: $width-tablet) {
+    top: 20px;
+    right: 20px;
   }
 }
 
@@ -167,20 +164,20 @@
   right: 0;
 
   width: 100%;
-  height: 4px;
-  border-radius: 2px;
+  height: 3px;
+  border-radius: 0;
 
-  background-color: $white-color;
+  background-color: $blue;
 
   transition-duration: 0.25s;
 }
 
 .menu__btn > span::before {
   content: '';
-  top: -8px;
+  top: -6px;
 }
 
 .menu__btn > span::after {
   content: '';
-  top: 8px;
+  top: 6px;
 }
