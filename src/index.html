@@ -8,8 +8,8 @@
 <body>
     @@include("html/header.html")
     <main>
-        <div class="content-wrapper">
-            <section class="promo">
+        <section class="promo">
+            <div class="content-wrapper content-wrapper--promo">
                 <div class="promo__text">
                     <h2 class="promo__title">
                         New Automation
@@ -23,12 +23,13 @@
                         See Our Project
                     </a>
                 </div>
-                <svg  width="688" height="624">
+                <svg class="promo__pic">
                     <use xlink:href="#promo-pic"></use>
                 </svg>
-            </section>
+            </div>
+        </section>
             <section class="benefits">
-                <div class="content-wrapper">
+                <div class="content-wrapper content-wrapper--benefits">
                     <h2 class="benefits__title">
                         What we do to help
                         our client grow in
@@ -98,28 +99,28 @@
                     </div>
                     <ul class="clients__list">
                         <li class="clients__item">
-                            LOGO CLIENT 1
+                            <a class="clients__link">LOGO CLIENT 1</a>
                         </li>
                         <li class="clients__item">
-                            LOGO CLIENT 2
+                            <a class="clients__link">LOGO CLIENT 2</a>
                         </li>
                         <li class="clients__item">
-                            LOGO CLIENT 3
+                            <a class="clients__link">LOGO CLIENT 3</a>
                         </li>
                         <li class="clients__item">
-                            LOGO CLIENT 4
+                            <a class="clients__link">LOGO CLIENT 4</a>
                         </li>
                         <li class="clients__item">
-                            LOGO CLIENT 5
+                            <a class="clients__link">LOGO CLIENT 5</a>
                         </li>
                         <li class="clients__item">
-                            LOGO CLIENT 6
+                            <a class="clients__link">LOGO CLIENT 6</a>
                         </li>
                         <li class="clients__item">
-                            LOGO CLIENT 7
+                            <a class="clients__link">LOGO CLIENT 7</a>
                         </li>
-                        <li class="clients__item">
-                            More Client
+                        <li class="clients__item clients__item--more">
+                            <a class="clients__link">More Client</a>
                         </li>
                     </ul>
                 </div>
@@ -129,7 +130,7 @@
     @@include("html/footer.html")
 
     <svg class="visually-hidden">
-             <symbol id="promo-pic" width="688" height="624" viewBox="0 0 688 624" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <symbol id="promo-pic" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.4" d="M624.607 75.4102C479.832 6.51749 415.969 194.909 316.138 225.906C216.394 271.253 120.215 218.176 60.8283 263.674C-33.3064 335.794 8.01039 461.963 68.2737 515.05C154.694 591.18 308.272 563.78 467.012 481.462C665.894 378.329 751.55 135.817 624.607 75.4102Z" fill="#98C3E8"/>
             <path opacity="0.2" d="M143.5 150.5C148.5 163 133.5 182.5 112 189C93.4998 194.593 75.4998 194 70.4998 181C66.0767 169.5 79.9998 157 95.9998 150.5C112 144 138.5 138 143.5 150.5Z" fill="#98C3E8"/>
             <path opacity="0.2" d="M307 125C303.109 115.06 316.816 91.8658 333.802 86.7986C348.419 82.4383 362.111 72.1637 366 82.5C369.44 91.6437 358.909 112.325 346.26 117.415C333.612 122.505 310.891 134.94 307 125Z" fill="#98C3E8"/>
