@@ -1,0 +1,127 @@
+.clients {
+  background-color: $blue;
+  border-radius: 200px 0px 0px 0px;
+  padding-top: 96px;
+  padding-bottom: 125px;
+  color: $white;
+
+  @media (max-width: $width-tablet) {
+    padding: 80px 0;
+  }
+}
+
+.clients__text {
+  display: flex;
+  gap: 97px;
+  margin-bottom: 123px;
+
+  @media (max-width: $width-desktop) {
+    padding-left: 50px;
+    padding-right: 50px;
+    gap: 50px;
+  }
+  @media (max-width: $width-tablet) {
+    flex-direction: column;
+    gap: 35px;
+    margin-bottom: 80px;
+}
+}
+
+.clients__title {
+  flex-shrink: 0;
+  width: 227px;
+  margin: 0;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 128%;
+  letter-spacing: 0.05em;
+
+  @media (max-width: $width-tablet) {
+    width: 100%;
+  }
+}
+
+.clients__description {
+  width: 540px;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 162%;
+  letter-spacing: 0.05em;
+
+  opacity: 0.6;
+
+  @media (max-width: $width-tablet) {
+    font-size: 18px;
+    width: 100%;
+  }
+}
+
+.clients__list {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 230%;
+  letter-spacing: 0.02em;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(2, 128px);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: $width-tablet) {
+    grid-template-columns: repeat(2, 50%);
+  }
+  @media (max-width: $width-mobile) {
+    grid-template-columns: 100%;
+  }
+}
+
+.clients__item {
+
+  &--more {
+    background-color: rgba($darkblue, 20%);
+  }
+
+  @media (min-width: $width-tablet) {
+    &:not(:nth-child(4n)) {
+      border-right: 1px solid rgba($white, 40%);
+    }
+
+    &:nth-child(n+5) {
+      border-top: 1px solid rgba($white, 40%);
+    }
+  }
+
+  @media (max-width: $width-tablet) and (min-width: $width-mobile) {
+    &:not(:nth-child(2n)) {
+      border-right: 1px solid rgba($white, 40%);
+    }
+
+    &:nth-child(n+3) {
+      border-top: 1px solid rgba($white, 40%);
+    }
+  }
+
+  @media (max-width: $width-mobile) {
+    &:nth-child(n+2) {
+      border-top: 1px solid rgba($white, 40%);
+    }
+  }
+}
+
+.clients__link {
+  width: 100%;
+  height: 100%;
+  min-height: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+}
