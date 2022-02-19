@@ -1,13 +1,14 @@
-/*$grey-blue: #283645;
-$promo-color: #1d2631;
-$light-grey: #f2f2f2;
-$pink-color: #d22856;*/
-$white-color: #ffffff;
-$black-color: #000000;
-
+$blue: #5A98D0;
+$darkblue: #1F3F68;
+$white: #ffffff;
+$black: #000000;
+$promo-gradient-color: rgba(#98C3E8, 20%);
+$promo-gradient: linear-gradient(0deg, $promo-gradient-color 8.84%, rgba(152, 195, 232, 0) 31.12%);
 $margin-wrapper-desktop: 120px;
 $margin-wrapper-mobile: 20px;
 
-$width-mobile: 320px;
-$width-tablet: 660px;
-$width-desktop: 1200px;
+$width-mobile: 525px;
+$width-tablet: 860px;
+$width-desktop: 1100px;
+$width-max: 1366px;
+$width-min: 360px;
