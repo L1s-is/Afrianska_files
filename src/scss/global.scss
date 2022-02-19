@@ -24,16 +24,19 @@ body{
 }
 
 .content-wrapper{
-  max-width: 940px;
+  max-width: $width-max - 213*2px;
   margin: 0 auto;
-  overflow: visible;
+  min-width: $width-min;
+
+  @media (max-width: $width-desktop) {
+    padding: 0 60px;
+  }
 
   @media (max-width: $width-tablet) {
-    max-width: 720px;
-    margin: 0 auto;
+    padding: 0 40px;
   }
 
   @media (max-width: $width-mobile) {
-    margin: 0 20px;
+    padding: 0 20px;
   }
 }
