@@ -44,8 +44,14 @@ body{
 .btn {
   display: block;
   width: 220px;
+  height: 56px;
+  min-height: min-content;
   padding: 15px;
+  border: none;
+  cursor: pointer;
 
+  font-family: "Gilroy", sans-serif;
+  font-size: 16px;
   text-align: center;
   letter-spacing: 0.04em;
   color: $white;
