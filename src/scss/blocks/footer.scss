@@ -1,6 +1,18 @@
 .footer--main {
   background-color: $blue;
   padding-right: 96px;
+  min-width: $width-min;
+  @media (max-width: $width-desktop) {
+    padding-right: 60px;
+  }
+
+  @media (max-width: $width-tablet) {
+    padding-right: 60px;
+  }
+
+  @media (max-width: $width-mobile) {
+    padding-right: 20px;
+  }
 }
 
 .footer {
@@ -9,8 +21,13 @@
   padding-top: 91px;
   padding-bottom: 64px;
   padding-left: 16px;
+  min-width: $width-min;
 
   color: $white;
+
+  @media (max-width: $width-desktop) {
+    padding-left: 0;
+  }
 }
 
 .content-wrapper--footer {
@@ -25,35 +42,76 @@
 .cooperation {
   display: flex;
   margin-bottom: 64px;
+
+  @media (max-width: $width-desktop) {
+    gap: 70px;
+  }
+  @media (max-width: $width-tablet) {
+    flex-wrap: wrap;
+    gap: 70px;
+    //justify-content: center;
+  }
 }
 
 .work {
   margin-bottom: 96px;
 
   &::after {
+    //width: calc(100% - 197px);
+    width: calc(50% + 430px + 16px);
+    margin-right: auto;
     height: 1px;
     background-color: $white;
     content: "";
     display: block;
     margin-top: 96px;
+    margin-left: -16px;
     opacity: 0.6;
+
+    @media (max-width: $width-desktop) {
+      width: calc(100% - 60px + 16px);
+    }
+    @media (max-width: $width-desktop) {
+
+      width: calc(100% - 20px + 16px);
+    }
   }
 }
 
 .work--flex {
+  max-width: 860px;
   display: flex;
   align-items: center;
-  gap: 180px;
+  //gap: 180px;
+
+  @media (max-width: $width-desktop) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .work__text {
   width: 460px;
-  //flex-shrink: 1;
+  margin-right: 30px;
+
+  @media (max-width: $width-desktop) {
+    width: 100%;
+  }
+
+  @media (max-width: $width-mobile) {
+    padding-right: 20px;
+  }
 }
 
 .work__button{
   min-width: 180px;
+  margin-left: auto;
   flex-shrink: 1;
+
+  @media (max-width: $width-desktop) {
+    margin-top: 50px;
+    margin-left: 0;
+  }
 }
 
 .work__title {
@@ -64,6 +122,10 @@
   font-size: 36px;font-weight: 600;
   line-height: 128%;
   letter-spacing: 0.05em;
+
+  @media (max-width: $width-desktop) {
+    width: 100%;
+  }
 }
 
 .work__description {
@@ -99,6 +161,17 @@
   font-weight: 400;
   line-height: 162%;
   letter-spacing: 0.05em;
+
+  @media (max-width: $width-desktop) {
+    margin-right: auto;
+  }
+  @media (max-width: $width-tablet) {
+    width: 100%;
+    /*display: flex;
+    flex-direction: column;
+    margin: 0 auto;*/
+    //grid-template-columns: 1fr 1fr;
+  }
 }
 
 .contacts__description,
@@ -111,12 +184,33 @@
   text-decoration: none;
 }
 
+.contacts__mail {
+  margin-bottom: 0;
+}
+
 .contacts__description:before,
 .contacts__phone:before,
 .contacts__mail:before {
   font-weight: 600;
   margin-right: 16px;
 }
+
+/*@media (max-width: $width-tablet) {
+  .contacts__description {
+    margin: 0;
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+  .contacts__phone,
+  .contacts__mail{
+    margin: 0;
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
+  .contacts__mail{
+    margin-top: 20px;
+  }
+}*/
 
 .contacts__description:before {
   content: "A.";
@@ -132,6 +226,14 @@
 
 .about {
   margin-right: 77px;
+
+  @media (max-width: $width-desktop) {
+    margin-right: 0;
+  }
+}
+
+.follow {
+  min-width: 100px;
 }
 
 .about__subtitle,
@@ -147,6 +249,7 @@
 .about__list,
 .follow__list {
   padding-left: 0;
+  margin-bottom: 0;
 }
 
 .about__item,
@@ -155,6 +258,11 @@
   font-size: 16px;
   line-height: 162%;
   letter-spacing: 0.05em;
+}
+
+.about__item:last-child,
+.follow__item:last-child {
+  margin-bottom: 0;
 }
 
 .about__link,
