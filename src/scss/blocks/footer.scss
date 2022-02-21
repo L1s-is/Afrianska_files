@@ -31,10 +31,10 @@
   margin-bottom: 96px;
 
   &::after {
-    height: 0;
+    height: 1px;
+    background-color: $white;
     content: "";
     display: block;
-    border: 1px solid $white;
     margin-top: 96px;
     opacity: 0.6;
   }
