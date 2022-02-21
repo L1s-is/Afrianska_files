@@ -1,6 +1,20 @@
+.form__box {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba($darkblue, 70%);
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+
 .work__form {
   display: block;
   width: 540px;
+  //max-width: 540px;
   min-height: 800px;
   padding: 56px;
   position: absolute;
@@ -10,6 +24,17 @@
   box-shadow: 5px 10px 50px rgba(16, 112, 177, 0.2);
   border-radius: 10px;
   color: $darkblue;
+
+  @media (max-width: $width-tablet) {
+    width: 80%;
+    left: 10%;
+  }
+
+  @media (max-width: $width-mobile) {
+    padding: 56px 30px;
+    width: 90%;
+    left: 5%;
+  }
 }
 
 .btn--close {
@@ -91,6 +116,10 @@
   letter-spacing: 0.04em;
   overflow: auto;
   cursor: pointer;
+
+  @media (max-width: $width-tablet) {
+    width: 100%;
+  }
 
   &:hover {
     opacity: 1;
