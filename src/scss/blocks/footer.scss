@@ -157,6 +157,35 @@
   letter-spacing: 0.05em;
 }
 
+.about__link,
+.follow__link {
+  color: $white;
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.about__link::after,
+.follow__link::after {
+  content: "";
+  width: 0;
+  height: 1px;
+  background-color: $white;
+
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+.about__link:hover.about__link::after,
+.follow__link:hover.follow__link::after {
+  width: 100%;
+  left: 0;
+  transition: 0.3s ease-in-out;
+}
+
 .copyright {
   font-size: 16px;
   line-height: 162%;
