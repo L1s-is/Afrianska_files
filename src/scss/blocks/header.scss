@@ -133,6 +133,7 @@
 
 #menu__toggle:checked ~ .nav__list {
   top: 0;
+  z-index: 2;
   /*position: relative;*/
   visibility: visible;
 }

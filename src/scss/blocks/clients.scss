@@ -4,6 +4,7 @@
   padding-top: 96px;
   padding-bottom: 125px;
   color: $white;
+  min-width: $width-min;
 
   @media (max-width: $width-tablet) {
     padding: 80px 0;
@@ -25,6 +26,9 @@
     gap: 35px;
     margin-bottom: 80px;
 }
+  @media (max-width: $width-mobile) {
+    padding-right: 0;
+  }
 }
 
 .clients__title {
