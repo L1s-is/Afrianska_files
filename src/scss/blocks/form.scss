@@ -9,6 +9,7 @@
   width: 100vw;
   height: 100vh;
   overflow: auto;
+  min-width: $width-min;
 }
 
 .work__form {
@@ -88,6 +89,10 @@
 
   margin-bottom: 48px;
   display: block;
+
+  @media (max-width: $width-mobile) {
+    margin-bottom: 35px;
+  }
 }
 
 .form__label {
@@ -120,6 +125,10 @@
 
   @media (max-width: $width-tablet) {
     width: 100%;
+  }
+
+  @media (max-width: $width-mobile) {
+    margin-bottom: 25px;
   }
 
   &:hover {
