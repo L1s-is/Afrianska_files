@@ -131,7 +131,7 @@
   transform: rotate(90deg);
 }
 
-#menu__toggle:checked ~ .nav__list {
+.nav__list.open {
   top: 0;
   z-index: 2;
   /*position: relative;*/
