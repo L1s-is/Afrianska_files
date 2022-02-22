@@ -1,28 +1,34 @@
-
+import {addClass} from "./util.js";
+import {removeClass} from "./util.js";
+import {showMessageValidity} from "./util.js";
 import {onClickCloseForm} from "./form.js";
+import {upLoadHandler} from "./backend.js";
 
 export function validationForm () {
     const formBox = document.querySelector(".form__box");
     const form = formBox.querySelector(".work__form");
     const formSubmit = form.querySelector(".form__btn");
-    const inputName = document.querySelector("#name")
-    const inputEmail = document.querySelector("#email")
-    const inputMessage = document.querySelector("#message")
+    const inputName = document.querySelector("#name");
+    const inputEmail = document.querySelector("#email");
 
-    function errorValidHandler(formElement) {
-        let elementValue = formElement.value.replace(/ +/g, ' ').trim()
-        formElement.style.borderColor = 'red';
+    function createBorderStyle (element, color) {
+        element.style.borderColor = color;
+    }
+
+    function showValidError(formElement) {
+        let elementValue = formElement.value.replace(/ +/g, ' ').trim();
+        createBorderStyle(formElement, "red");
         if (!elementValue) {
-            formElement.classList.add("ad-form__element--error")
-            formElement.setCustomValidity("Пожалуйста, заполните поле")
+            addClass(formElement, "ad-form__element--error");
+            showMessageValidity(formElement, "Please, fill the field");
         } else if (elementValue.length < formElement.minLength) {
-            formElement.setCustomValidity("Поле может содержать не менее " + formElement.minLength + " символов. Введено " + elementValue.length + " символов.")
+            showMessageValidity(formElement, `The field can contain at least ${formElement.minLength} characters. Entered ${elementValue.length} characters.`);
         } else if (elementValue.length > formElement.maxLength) {
-            formElement.setCustomValidity("Поле может содержать не более " + formElement.maxLength + " символов. Введено " + elementValue.value.length + " символов.")
+            showMessageValidity(formElement, `The field can contain no more than ${formElement.maxLength} characters. Entered ${elementValue.length} characters.`);
         }  else {
-            formElement.setCustomValidity("")
-            formElement.classList.remove("ad-form__element--error")
-            formElement.style.borderColor = 'green';
+            showMessageValidity(formElement, "");
+            removeClass(formElement, "ad-form__element--error");
+            createBorderStyle(formElement, "green");
         }
     }
 
@@ -33,117 +39,62 @@ export function validationForm () {
 
     function updateInput() {
         if (!inputEmail.value) {
-            inputEmail.setCustomValidity("The field cannot be empty")
-            inputEmail.style.borderColor = 'red';
+            showMessageValidity(inputEmail, "The field cannot be empty");
+            createBorderStyle(inputEmail, "red");
         } else if (validateEmail(inputEmail.value)) {
-            inputEmail.setCustomValidity("")
-            inputEmail.classList.remove("ad-form__element--error")
-            inputEmail.style.borderColor = 'green';
+            showMessageValidity(inputEmail, "");
+            removeClass(inputEmail, "ad-form__element--error");
+            createBorderStyle(inputEmail, "green");
         }
         else {
-            inputEmail.setCustomValidity("The field must contain an entry like example@mail.com")
-            inputEmail.style.borderColor = 'red';
+            showMessageValidity(inputEmail, "The field must contain an entry like example@mail.com");
+            createBorderStyle(inputEmail, "red");
         }
 
     }
-    inputEmail.addEventListener('input', updateInput);
-    inputName.addEventListener('input', errorValidHandler);
+    inputEmail.addEventListener("input", updateInput);
+    inputName.addEventListener("input", showValidError);
 
     function submitUpdateEmailInput() {
-        inputEmail.classList.add("ad-form__element--error")
-        updateInput()
+        addClass(inputEmail, "ad-form__element--error");
+        updateInput();
     }
+
     function submitUpdateNameInput() {
-        inputEmail.classList.add("ad-form__element--error")
-        updateInput()
+        addClass(inputName, "ad-form__element--error");
+        showValidError(inputName);
     }
 
-//валидация элементов формы при клике на кнопку отправки формы
     function submitButtonClickHandler(formElement) {
-        formElement.addEventListener("input", function () {
-            errorValidHandler(formElement)
-        })
-        formElement.addEventListener("invalid", function () {
-            errorValidHandler(formElement)
-        })
+        formElement.addEventListener("input", () => showValidError(formElement));
+        formElement.addEventListener("invalid", () => showValidError(formElement));
     }
 
-    formSubmit.addEventListener("click", function () {
-        submitButtonClickHandler(inputName)
-    })
+    formSubmit.addEventListener("click", () => submitButtonClickHandler(inputName));
 
-    formElementValidHandler(inputName)
-    formElementValidHandler(inputEmail)
+    formElementValidHandler(inputName);
+    formElementValidHandler(inputEmail);
 
     function formElementValidHandler(formElement) {
         if (!formElement.value) {
-            formElement.setCustomValidity("Заполните поле")
+            showMessageValidity(formElement, "The field cannot be empty");
         }
-        inputName.addEventListener("invalid", function () {
-            submitUpdateNameInput()
-        })
-        inputEmail.addEventListener("invalid", function () {
-            submitUpdateEmailInput()
-        })
-    }
-
-    let errorMessage = document.querySelector(".error")
-
-    function errorHandler(message) {
-        errorMessage.querySelector(".error__message").textContent = message
-        errorMessage.classList.remove("hidden")
-        errorMessage.querySelector("button").addEventListener("click", hideErrorMessage)
-    }
-
-    let successMessage = document.querySelector(".success")
-
-    function showSuccessMessage() {
-        successMessage.classList.remove("hidden")
-        let successMessageBtn = document.querySelector(".button--success")
-        successMessageBtn.addEventListener("click", hideSuccessMessage)
-        setTimeout(hideSuccessMessage, 5000)
-    }
-
-    function hideSuccessMessage() {
-        successMessage.classList.add("hidden")
-    }
-
-    function hideErrorMessage() {
-        errorMessage.classList.add("hidden")
-    }
-
-    function upLoadHandler(url, data, successHandler) {
-        let xhr = new XMLHttpRequest()
-        xhr.responseType = "json"
-        xhr.addEventListener("load", function () {
-            switch (xhr.status) {
-                case 200:
-                    successHandler()
-                    showSuccessMessage()
-                    break
-                default:
-                    errorHandler("Данные не отправлены, попробуйте позднее")
-                    setTimeout(hideErrorMessage, 3000)
-                    break
-            }
-        })
-
-        xhr.open("Post", url)
-        xhr.send(data)
+        inputName.addEventListener("invalid",  submitUpdateNameInput);
+        inputEmail.addEventListener("invalid", submitUpdateEmailInput);
     }
 
     let sendDataURL = "https://echo.htmlacademy.ru"
     form.addEventListener("submit", function (evt) {
-        submitUpdateEmailInput()
-        submitUpdateNameInput()
-        upLoadHandler(sendDataURL, new FormData(form), onClickCloseForm)
+        submitUpdateEmailInput();
+        submitUpdateNameInput();
+        upLoadHandler(sendDataURL, new FormData(form), onClickCloseForm);
 
-        form.reset()
-        inputName.style = "none"
-        inputEmail.style = "none"
-        formElementValidHandler(inputName)
-        formElementValidHandler(inputEmail)
-        evt.preventDefault()
+        form.reset();
+        inputName.style = "none";
+        inputEmail.style = "none";
+        formElementValidHandler(inputName);
+        formElementValidHandler(inputEmail);
+        evt.preventDefault();
     })
 }
 
