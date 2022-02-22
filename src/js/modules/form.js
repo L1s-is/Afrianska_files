@@ -57,7 +57,7 @@ export function formOpen() {
     }
 }
 
-export function onClickNotScroll() {
+function onClickNotScroll() {
     body.classList.toggle("not-scroll");
 }
 
