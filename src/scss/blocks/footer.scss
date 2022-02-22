@@ -18,7 +18,7 @@
 .footer {
   background-color: #316099;
   border-radius: 0px 200px 0px 0px;
-  padding-top: 91px;
+  padding-top: 87px;
   padding-bottom: 64px;
   padding-left: 16px;
   min-width: $width-min;
@@ -72,7 +72,7 @@
     background-color: $white;
     content: "";
     display: block;
-    margin-top: 96px;
+    margin-top: 85px;
     margin-left: -16px;
     opacity: 0.6;
 
@@ -119,6 +119,7 @@
   min-width: 180px;
   margin-left: auto;
   flex-shrink: 1;
+  margin-bottom: 10px;
 
   @media (max-width: $width-desktop) {
     margin-top: 50px;
@@ -153,7 +154,7 @@
 .main__logo--footer {
   font-size: 28px;
   line-height: 164%;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   color: $white;
   text-decoration: none;
 
@@ -161,12 +162,12 @@
 }
 
 .logo__img--footer {
-  margin-right: 15px;
+  margin-right: 18px;
 }
 
 .contacts {
   width: 299px;
-  margin-right: 100px;
+  margin-right: 103px;
 
   font-size: 16px;
   font-weight: 400;
@@ -185,7 +186,7 @@
 .contacts__phone,
 .contacts__mail {
   display: flex;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 
   color: $white;
   text-decoration: none;
@@ -199,7 +200,7 @@
 .contacts__phone:before,
 .contacts__mail:before {
   font-weight: 600;
-  margin-right: 16px;
+  margin-right: 20px;
 }
 
 .contacts__description:before {
@@ -222,7 +223,9 @@
   }
 }
 
-.follow {
+.follow,
+.about {
+  margin-top: -3px;
   min-width: 100px;
 }
 

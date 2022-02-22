@@ -1,7 +1,7 @@
 .promo {
   padding-top: 61px;
-  margin-bottom: 180px;
-  min-height: 680px;
+  margin-bottom: 187px;
+  min-height: 651px;
   min-width: $width-min;
   background: $promo-gradient;
   width: 100vw;
@@ -52,13 +52,13 @@
 
 .promo__title {
   margin-top: 0;
-  margin-bottom: 32px;
+  margin-bottom: 39px;
   width: 525px;
 
   font-family: "Galien", sans-serif;
   font-size: 64px;
   line-height: 116%;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.031em;
 
   @media (max-width: $width-tablet) {
     width: 100%;
@@ -72,7 +72,7 @@
 }
 
 .promo__description {
-  margin-bottom: 71px;
+  margin-bottom: 76px;
   width: 425px;
   letter-spacing: 0.05em;
   opacity: 0.6;
@@ -99,10 +99,9 @@
   flex-basis: 0;
   width: 679px;
   max-width: 679px;
-  margin-top: -90px;
-  //margin-right: -190px;
+  margin-top: -85px;
   margin-right: 50px;
-  margin-left: -62px;
+  margin-left: -82px;
 
   @media (max-width: $width-max - 10px) {
 
