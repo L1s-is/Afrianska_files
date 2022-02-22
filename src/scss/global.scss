@@ -21,6 +21,22 @@ body{
   font-family: Gilroy, sans-serif;
   font-size: 18px;
   line-height: 32px;
+
+  scrollbar-color: rgba(140, 140, 140, 0.1);
+  scrollbar-width: thin;
+
+
+&::-webkit-scrollbar {
+  width: 1px;
+  margin-left: 0;
+}
+
+&::-webkit-scrollbar-thumb {
+  margin-left: 0;
+  width: 1px;
+  background-color: rgba(140, 140, 140, 0.1);
+  //border-radius: 8px;
+}
 }
 
 .content-wrapper{
