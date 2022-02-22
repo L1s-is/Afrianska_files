@@ -4,14 +4,14 @@ import {showMessageValidity} from "./util.js";
 import {onClickCloseForm} from "./form.js";
 import {upLoadHandler} from "./backend.js";
 
-export function validationForm () {
+export function validationForm() {
     const formBox = document.querySelector(".form__box");
     const form = formBox.querySelector(".work__form");
     const formSubmit = form.querySelector(".form__btn");
     const inputName = document.querySelector("#name");
     const inputEmail = document.querySelector("#email");
 
-    function createBorderStyle (element, color) {
+    function createBorderStyle(element, color) {
         element.style.borderColor = color;
     }
 
@@ -25,7 +25,7 @@ export function validationForm () {
             showMessageValidity(formElement, `The field can contain at least ${formElement.minLength} characters. Entered ${elementValue.length} characters.`);
         } else if (elementValue.length > formElement.maxLength) {
             showMessageValidity(formElement, `The field can contain no more than ${formElement.maxLength} characters. Entered ${elementValue.length} characters.`);
-        }  else {
+        } else {
             showMessageValidity(formElement, "");
             removeClass(formElement, "ad-form__element--error");
             createBorderStyle(formElement, "green");
@@ -33,6 +33,7 @@ export function validationForm () {
     }
 
     const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+
     function validateEmail(value) {
         return EMAIL_REGEXP.test(value);
     }
@@ -45,13 +46,13 @@ export function validationForm () {
             showMessageValidity(inputEmail, "");
             removeClass(inputEmail, "ad-form__element--error");
             createBorderStyle(inputEmail, "green");
-        }
-        else {
+        } else {
             showMessageValidity(inputEmail, "The field must contain an entry like example@mail.com");
             createBorderStyle(inputEmail, "red");
         }
 
     }
+
     inputEmail.addEventListener("input", updateInput);
     inputName.addEventListener("input", showValidError);
 
@@ -79,7 +80,7 @@ export function validationForm () {
         if (!formElement.value) {
             showMessageValidity(formElement, "The field cannot be empty");
         }
-        inputName.addEventListener("invalid",  submitUpdateNameInput);
+        inputName.addEventListener("invalid", submitUpdateNameInput);
         inputEmail.addEventListener("invalid", submitUpdateEmailInput);
     }
 

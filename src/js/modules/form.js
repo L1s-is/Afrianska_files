@@ -6,15 +6,12 @@ const form = formBox.querySelector(".work__form");
 const talkButton = document.querySelector(".work__button");
 export const body = document.querySelector("body");
 
-
 export function formOpen() {
     const closeButton = form.querySelector(".btn--close");
     const burger = document.querySelector(".menu__btn");
 
     talkButton.addEventListener("click", onClickOpenForm);
     burger.addEventListener("click", onClickNotScroll)
-
-
 
     function onClickOpenForm() {
         removeClass(formBox, "hidden");
@@ -25,11 +22,11 @@ export function formOpen() {
     }
 }
 
-export function onClickNotScroll () {
+export function onClickNotScroll() {
     body.classList.toggle("not-scroll");
 }
 
-function onClickCloseFormNotBtn (evt) {
+function onClickCloseFormNotBtn(evt) {
     let target = evt.target;
     if (target !== talkButton) {
         let itsForm = target === form || form.contains(target);
