@@ -6,17 +6,17 @@
   left: 0;
   z-index: 2;
   background-color: rgba($darkblue, 70%);
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   overflow: auto;
   min-width: $width-min;
 }
 
 .work__form {
+  max-height: 95vh;
   overflow: auto;
   display: block;
   width: 540px;
-  min-height: 800px;
   padding: 56px;
   position: absolute;
   left: calc(50% - 270px);
@@ -25,6 +25,20 @@
   box-shadow: 5px 10px 50px rgba(16, 112, 177, 0.2);
   border-radius: 10px;
   color: $darkblue;
+
+  scrollbar-color: rgba(140, 140, 140, 0.4);
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+    margin: 0 2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    margin: 0 2px;
+    width: 3px;
+    background-color: rgba(140, 140, 140, 0.4);
+  }
 
   @media (max-width: $width-tablet) {
     width: 80%;

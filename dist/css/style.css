@@ -798,17 +798,17 @@ body::-webkit-scrollbar-thumb {
   left: 0;
   z-index: 2;
   background-color: rgba(31, 63, 104, 0.7);
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   overflow: auto;
   min-width: 360px;
 }
 
 .work__form {
+  max-height: 95vh;
   overflow: auto;
   display: block;
   width: 540px;
-  min-height: 800px;
   padding: 56px;
   position: absolute;
   left: calc(50% - 270px);
@@ -816,6 +816,19 @@ body::-webkit-scrollbar-thumb {
   box-shadow: 5px 10px 50px rgba(16, 112, 177, 0.2);
   border-radius: 10px;
   color: #1F3F68;
+  scrollbar-color: rgba(140, 140, 140, 0.4);
+  scrollbar-width: thin;
+}
+
+.work__form::-webkit-scrollbar {
+  width: 3px;
+  margin: 0 2px;
+}
+
+.work__form::-webkit-scrollbar-thumb {
+  margin: 0 2px;
+  width: 3px;
+  background-color: rgba(140, 140, 140, 0.4);
 }
 
 .btn--close {
