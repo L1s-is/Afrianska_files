@@ -35,12 +35,8 @@
 }
 
 .content-wrapper--footer {
-  //padding-left: 96px;
   max-width: 1270px - (213px+197px);
   margin: 0 auto;
-  /*padding-left: 213px;
-  padding-right: 197px;*/
-  //margin-right: 197px;
 }
 
 .cooperation {
@@ -119,7 +115,7 @@
   }
 }
 
-.work__button{
+.work__button {
   min-width: 180px;
   margin-left: auto;
   flex-shrink: 1;
@@ -135,7 +131,8 @@
   margin-top: 0;
   margin-bottom: 32px;
 
-  font-size: 36px;font-weight: 600;
+  font-size: 36px;
+  font-weight: 600;
   line-height: 128%;
   letter-spacing: 0.05em;
 
@@ -145,8 +142,6 @@
 }
 
 .work__description {
-  /*width: 460px;*/
-
   font-size: 16px;
   font-weight: 400;
   line-height: 162%;
@@ -183,10 +178,6 @@
   }
   @media (max-width: $width-tablet) {
     width: 100%;
-    /*display: flex;
-    flex-direction: column;
-    margin: 0 auto;*/
-    //grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -210,23 +201,6 @@
   font-weight: 600;
   margin-right: 16px;
 }
-
-/*@media (max-width: $width-tablet) {
-  .contacts__description {
-    margin: 0;
-    grid-column-start: 1;
-    grid-row-start: 2;
-  }
-  .contacts__phone,
-  .contacts__mail{
-    margin: 0;
-    grid-column-start: 2;
-    grid-row-start: 2;
-  }
-  .contacts__mail{
-    margin-top: 20px;
-  }
-}*/
 
 .contacts__description:before {
   content: "A.";
@@ -253,7 +227,7 @@
 }
 
 .about__subtitle,
-.follow__subtitle{
+.follow__subtitle {
   font-size: 20px;
   font-weight: 600;
   line-height: 150%;

@@ -35,9 +35,7 @@ export function formOpen() {
             removeClass(navList, "open");
             document.removeEventListener("click", onClickCloseListNotBtn);
         }
-
     }
-
 
     function onClickOpenForm() {
         removeClass(formBox, "hidden");

@@ -16,7 +16,6 @@
   overflow: auto;
   display: block;
   width: 540px;
-  //max-width: 540px;
   min-height: 800px;
   padding: 56px;
   position: absolute;
@@ -167,16 +166,16 @@
   }
 }
 
-.ad-form__element--error:invalid{
+.ad-form__element--error:invalid {
   animation: 1.2s ease-in-out validation-error;
   border: 2px solid red;
-  background-color: rgba(255,0,0,0.3);
+  background-color: rgba(255, 0, 0, 0.3);
   transition: 0.5s;
 }
 
-.ad-form__element--error:invalid:focus{
+.ad-form__element--error:invalid:focus {
   border: 2px solid red;
-  background-color: rgba(255,0,0,0.3);
+  background-color: rgba(255, 0, 0, 0.3);
   transition: 0.5s;
 }
 
@@ -213,7 +212,6 @@
 .button--success {
   margin: 0 auto;
 }
-
 
 .hidden {
   display: none;

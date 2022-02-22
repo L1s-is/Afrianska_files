@@ -1,9 +1,9 @@
-.header{
+.header {
   padding: 0;
   background-color: transparent;
 }
 
-.content-wrapper--header{
+.content-wrapper--header {
   max-width: $width-max;
   padding: 40px 83px;
   margin: 0 auto;
@@ -15,7 +15,7 @@
 
 }
 
-.main__logo{
+.main__logo {
   display: flex;
   align-items: center;
   width: min-content;
@@ -25,7 +25,7 @@
   border-bottom: none;
 }
 
-.logo__img{
+.logo__img {
   width: 48px;
   height: 32px;
   position: relative;
@@ -91,7 +91,7 @@
   }
 }
 
-.nav__link{
+.nav__link {
   overflow: hidden;
   position: relative;
   color: $white;
@@ -144,7 +144,6 @@
 .nav__list.open {
   top: 0;
   z-index: 2;
-  /*position: relative;*/
   visibility: visible;
 }
 
