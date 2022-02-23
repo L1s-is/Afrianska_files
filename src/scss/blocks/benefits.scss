@@ -1,5 +1,5 @@
 .benefits {
-  margin-bottom: 214px;
+  margin-bottom: 212px;
 
   @media (max-width: $width-tablet) {
     margin-bottom: 120px;
@@ -39,7 +39,7 @@
 .benefits__list {
   padding-left: 80px;
   margin: 0;
-  margin-top: -138px;
+  margin-top: -135px;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -94,8 +94,8 @@
 
 .benefits__item--smart-home::before {
   margin: 0 auto;
-  margin-bottom: 51px;
-  margin-top: -58px;
+  margin-bottom: 49px;
+  margin-top: -60px;
   display: block;
   background: url("../img/benefits-smart-home.svg") right bottom no-repeat;
   content: "";
@@ -113,8 +113,8 @@
 .benefits__item--famous::before {
   content: url("../img/benefits-famous.svg");
   margin-bottom: 54px;
-  margin-top: 3px;
-  margin-left: 18px;
+  margin-top: 0;
+  margin-left: 16px;
   display: block;
   width: 192px;
   height: 132px;
@@ -133,8 +133,8 @@
 
 .benefits__item--digital-product::before {
   content: url("../img/benefits-digital-product.svg");
-  margin-bottom: 56px;
-  margin-top: 3px;
+  margin-bottom: 55px;
+  margin-top: 0;
   margin-left: 38px;
   display: block;
   width: 171px;

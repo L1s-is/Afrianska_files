@@ -1,7 +1,7 @@
 .clients {
   background-color: $blue;
   border-radius: 200px 0px 0px 0px;
-  padding-top: 96px;
+  padding-top: 94px;
   padding-bottom: 125px;
   color: $white;
   min-width: $width-min;
@@ -13,8 +13,8 @@
 
 .clients__text {
   display: flex;
-  gap: 96px;
-  margin-bottom: 114px;
+  gap: 94px;
+  margin-bottom: 113px;
 
   @media (max-width: $width-desktop) {
     padding-left: 50px;
@@ -116,7 +116,7 @@
 
 .clients__link {
   margin-left: 3px;
-  margin-top: -3px;
+  margin-top: -2px;
   width: 100%;
   height: 100%;
   min-height: 128px;
