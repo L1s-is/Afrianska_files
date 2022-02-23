@@ -4,7 +4,6 @@
   min-height: 648px;
   min-width: $width-min;
   background: $promo-gradient;
-  width: 100vw;
 
   @media (max-width: $width-tablet) {
     margin-bottom: 80px;
@@ -29,6 +28,10 @@
 
   @media (max-width: $width-desktop) {
     flex-direction: column;
+  }
+
+  @media (max-width: $width-tablet) {
+    padding-right: 40px;
   }
 
   @media (max-width: $width-mobile) {
