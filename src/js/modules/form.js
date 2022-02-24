@@ -31,26 +31,43 @@ export function formOpen() {
         }
 
         function onClickCloseMenu() {
-            removeClass(body, "not-scroll");
+            addScroll();
             removeClass(navList, "open");
             document.removeEventListener("click", onClickCloseListNotBtn);
         }
     }
 }
 
+function removeScroll () {
+    addClass(body, "not-scroll");
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        removeClass(body, "not-scroll--desktop");
+    } else {
+        addClass(body, "not-scroll--desktop");
+    }
+}
+
+function addScroll () {
+    removeClass(body, "not-scroll");
+    removeClass(body, "not-scroll--desktop");
+}
+
 function onClickNotScroll() {
     body.classList.toggle("not-scroll");
+    if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+        body.classList.toggle("not-scroll--desktop");
+    }
 }
 
 function onClickOpenForm() {
     removeClass(formBox, "hidden");
-    addClass(body, "not-scroll");
+    removeScroll();
     document.addEventListener("click", onClickCloseFormNotBtn);
     closeButton.addEventListener("click", onClickCloseForm);
 }
 
 export function onClickCloseForm() {
-    removeClass(body, "not-scroll");
+    addScroll();
     addClass(formBox, "hidden");
     document.removeEventListener("click", onClickCloseFormNotBtn);
 }
