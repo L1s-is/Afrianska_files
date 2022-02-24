@@ -84,7 +84,7 @@ export function validationForm() {
         inputEmail.addEventListener("invalid", submitUpdateEmailInput);
     }
 
-    let sendDataURL = "https://echo.htmlacademy.ru"
+    const sendDataURL = "https://echo.htmlacademy.ru"
     form.addEventListener("submit", function (evt) {
         submitUpdateEmailInput();
         submitUpdateNameInput();
