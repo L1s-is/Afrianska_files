@@ -1,8 +1,10 @@
 import {addClass} from "./util.js";
 import {removeClass} from "./util.js";
-
+import {validationForm} from "./validation.js";
 const formBox = document.querySelector(".form-box");
 const form = formBox.querySelector(".work__form");
+const formElements = form.querySelectorAll("input");
+const submitBtn = form.querySelector("button[type=submit]");
 const talkButton = document.querySelector(".work__button");
 export const body = document.querySelector("body");
 const navList = document.querySelector(".nav__list");
@@ -60,6 +62,7 @@ function onClickNotScroll() {
 }
 
 function onClickOpenForm() {
+    validationForm(form, formElements, submitBtn);
     removeClass(formBox, "hidden");
     removeScroll();
     document.addEventListener("click", onClickCloseFormNotBtn);
