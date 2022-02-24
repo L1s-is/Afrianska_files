@@ -1,7 +1,11 @@
 .footer {
-  background-color: $blue;
   padding-right: 96px;
   min-width: $width-min;
+
+  &--main {
+    background-color: $blue;
+  }
+
   @media (max-width: $width-desktop) {
     padding-right: 60px;
   }
@@ -15,7 +19,7 @@
   }
 }
 
-.footer--main {
+.footer__box {
   background-color: #316099;
   border-radius: 0px 200px 0px 0px;
   padding-top: 88px;
