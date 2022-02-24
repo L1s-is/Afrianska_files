@@ -194,6 +194,30 @@
   transition: 0.5s;
 }
 
+.element-stroke--invalid {
+  border: 2px solid red;
+
+  &:hover {
+    border: 2px solid red;
+  }
+
+  &:focus {
+    border: 2px solid red;
+  }
+}
+
+.element-stroke--valid {
+  border: 2px solid green;
+
+  &:hover {
+    border: 2px solid green;
+  }
+
+  &:focus {
+    border: 2px solid green;
+  }
+}
+
 .success,
 .error {
   position: fixed;
