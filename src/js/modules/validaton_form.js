@@ -5,7 +5,7 @@ import {onClickCloseForm} from "./form.js";
 import {upLoadHandler} from "./backend.js";
 
 export function validationForm() {
-    const formBox = document.querySelector(".form__box");
+    const formBox = document.querySelector(".form-box");
     const form = formBox.querySelector(".work__form");
     const formSubmit = form.querySelector(".form__btn");
     const inputName = document.querySelector("#name");

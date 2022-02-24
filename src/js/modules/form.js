@@ -1,7 +1,7 @@
 import {addClass} from "./util.js";
 import {removeClass} from "./util.js";
 
-const formBox = document.querySelector(".form__box");
+const formBox = document.querySelector(".form-box");
 const form = formBox.querySelector(".work__form");
 const talkButton = document.querySelector(".work__button");
 export const body = document.querySelector("body");
