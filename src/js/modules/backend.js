@@ -2,24 +2,28 @@ import {removeClass} from "./util.js";
 import {addClass} from "./util.js";
 import {body} from "./form.js";
 
-export function upLoadHandler(url, data, successHandler) {
-    let xhr = new XMLHttpRequest();
-    xhr.responseType = "json";
-    xhr.addEventListener("load", function () {
-        switch (xhr.status) {
-            case 200:
-                successHandler();
-                showSuccessMessage();
-                break
-            default:
-                errorHandler("message not sent, please try again later");
-                setTimeout(hideErrorMessage, 3000);
-                break
-        }
-    })
+export async function upLoadHandler (url, data, successHandler) {
+    try {
+        const response = await fetch(
+            url,
+            {
+                method: 'POST',
+                data,
+            },
+        );
 
-    xhr.open("Post", url);
-    xhr.send(data);
+        if (response.ok) {
+            successHandler();
+            showSuccessMessage();
+        } else {
+            errorHandler("message not sent, please try again later");
+            setTimeout(hideErrorMessage, 3000);
+        }
+    }
+    catch (error) {
+        errorHandler("message not sent, please try again later");
+        setTimeout(hideErrorMessage, 3000);
+    }
 }
 
 let errorMessage = document.querySelector(".error");
