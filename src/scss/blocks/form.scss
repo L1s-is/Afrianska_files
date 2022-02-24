@@ -181,14 +181,14 @@
   }
 }
 
-.ad-form__element--error:invalid {
+.form__element--error:invalid {
   animation: 1.2s ease-in-out validation-error;
   border: 2px solid red;
   background-color: rgba(255, 0, 0, 0.3);
   transition: 0.5s;
 }
 
-.ad-form__element--error:invalid:focus {
+.form__element--error:invalid:focus {
   border: 2px solid red;
   background-color: rgba(255, 0, 0, 0.3);
   transition: 0.5s;

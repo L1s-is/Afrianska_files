@@ -19,7 +19,7 @@ export function validationForm() {
         let elementValue = formElement.value.replace(/ +/g, ' ').trim();
         createBorderStyle(formElement, "red");
         if (!elementValue) {
-            addClass(formElement, "ad-form__element--error");
+            addClass(formElement, "form__element--error");
             showMessageValidity(formElement, "Please, fill the field");
         } else if (elementValue.length < formElement.minLength) {
             showMessageValidity(formElement, `The field can contain at least ${formElement.minLength} characters. Entered ${elementValue.length} characters.`);
@@ -27,7 +27,7 @@ export function validationForm() {
             showMessageValidity(formElement, `The field can contain no more than ${formElement.maxLength} characters. Entered ${elementValue.length} characters.`);
         } else {
             showMessageValidity(formElement, "");
-            removeClass(formElement, "ad-form__element--error");
+            removeClass(formElement, "form__element--error");
             createBorderStyle(formElement, "green");
         }
     }
@@ -44,7 +44,7 @@ export function validationForm() {
             createBorderStyle(inputEmail, "red");
         } else if (validateEmail(inputEmail.value)) {
             showMessageValidity(inputEmail, "");
-            removeClass(inputEmail, "ad-form__element--error");
+            removeClass(inputEmail, "form__element--error");
             createBorderStyle(inputEmail, "green");
         } else {
             showMessageValidity(inputEmail, "The field must contain an entry like example@mail.com");
@@ -57,12 +57,12 @@ export function validationForm() {
     inputName.addEventListener("input", showValidError);
 
     function submitUpdateEmailInput() {
-        addClass(inputEmail, "ad-form__element--error");
+        addClass(inputEmail, "form__element--error");
         updateInput();
     }
 
     function submitUpdateNameInput() {
-        addClass(inputName, "ad-form__element--error");
+        addClass(inputName, "form__element--error");
         showValidError(inputName);
     }
 
