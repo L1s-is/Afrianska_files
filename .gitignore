@@ -5,6 +5,8 @@
 *.pdf
 *.psd
 *.sublime*
+gulp/version.json
+dist/
 node_modules/
 npm-debug.log*
 Thumbs.db
