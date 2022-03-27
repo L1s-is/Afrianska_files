@@ -1,0 +1,86 @@
+.feedback {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  margin-bottom: 96px;
+
+  @media (max-width: 900px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 66px;
+  }
+}
+
+.feedback__address {
+  color: $darkblue;
+  font-style: normal;
+  max-width: 310px;
+  width: 100%;
+  text-align: center;
+
+  @media (max-width: 900px) {
+
+  }
+}
+
+.feedback__address::before {
+  width: 300px;
+  height: 181px;
+  display: block;
+  content: url("../img/feedback-woman.svg");
+  margin: auto;
+  margin-bottom: 71px;
+  margin-top: 63px;
+
+  @media (max-width: 900px) {
+    margin-top: 0;
+    margin-bottom: 48px;
+  }
+}
+
+.feedback__subtitle {
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+}
+
+.feedback__description {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 162%;
+  letter-spacing: 0.04em;
+  color: rgba($darkblue, 0.6);
+  margin-bottom: 40px;
+}
+
+.feedback__link {
+  margin-bottom: 16px;
+  display: block;
+  text-decoration: none;
+  color: rgba($darkblue, 0.6);
+}
+
+.work__form--contacts-page {
+  flex-shrink: 0;
+  width: 60%;
+  max-width: 545px;
+  position: static;
+  max-height: min-content;
+
+  @media (max-width: $width-desktop) {
+    padding: 40px;
+  }
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+
+  @media (max-width: $width-mobile) {
+    padding: 20px;
+  }
+}
+
