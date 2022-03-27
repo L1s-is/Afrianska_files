@@ -16,7 +16,10 @@
   font-style: normal;
   max-width: 310px;
   width: 100%;
-  text-align: center;
+
+  @media (max-width: 900px) {
+    text-align: center;
+  }
 }
 
 .feedback__address::before {
@@ -55,9 +58,34 @@
 
 .feedback__link {
   margin-bottom: 16px;
-  display: block;
+  display: flex;
   text-decoration: none;
-  color: rgba($darkblue, 0.6);
+  color: $darkblue;
+  opacity: 0.6;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.feedback__link:hover{
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.feedback__link--phone::before,
+.feedback__link--site::before,
+.feedback__link--email::before{
+  content: url("../img/feedback-phone.svg");
+  width: 24px;
+  height: 24px;
+  display: block;
+  margin-right: 16px;
+}
+
+.feedback__link--site::before{
+  content: url("../img/feedback-site.svg");
+}
+
+.feedback__link--email::before{
+  content: url("../img/feedback-email.svg");
 }
 
 .work__form--contacts-page {
