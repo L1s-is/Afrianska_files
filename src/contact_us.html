@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+@@include("html/head.html", {
+"title": "Afrianska"
+})
+
+<body>
+@@include("html/header.html")
+<main>
+    <section class="contacts-main">
+        <div class="content-wrapper">
+            <h1 class="contacts-main__title">
+                Contact Us
+            </h1>
+            <p class="contacts-main__description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+        </div>
+    </section>
+    <div class="content-wrapper">
+        <section class="feedback">
+            <h2 class="visually-hidden">
+                Our contacts
+            </h2>
+            <address class="feedback__address">
+                <h3 class="feedback__subtitle">
+                    ADDRESS
+                </h3>
+                <p class="feedback__description">
+                    Id convallis placerat sit sed duis id
+                    amet volutpat quam a, pharetra.
+                </p>
+                <h3 class="feedback__subtitle">
+                    PHONE
+                </h3>
+                <p class="feedback__description">
+                    <a href="tel:+62-812-7313-4321" class="feedback__link feedback__link--phone">+62-812-7313-4321</a>
+                    <a href="tel:+62-817-000-1234" class="feedback__link feedback__link--phone">+62-817-000-1234</a>
+                </p>
+                <h3 class="feedback__subtitle">
+                    ONLINE SERVICE
+                </h3>
+                <p class="feedback__description">
+                    <a href="index.html" class="feedback__link feedback__link--site">www.afrianska.com</a>
+                    <a href="mailto:hello.afrian@gmail.com" class="feedback__link feedback__link--email">hello.afrian@gmail.com</a>
+                </p>
+            </address>
+            <form class="work__form work__form--contacts-page" method="post" enctype="multipart/form-data">
+
+                <fieldset class="form__fieldset">
+                    <legend class="form__title">SEND US MESSAGE</legend>
+                    <label class="form__label" for="name">Full Name</label>
+                    <input type="text" id="name" name="name" class="form__input" placeholder="Your Name" minlength="4"
+                           maxlength="60">
+                    <label class="form__label" for="email">Email</label>
+                    <input type="text" id="email" name="email" class="form__input" placeholder="Your Email"
+                           minlength="4"
+                           maxlength="60">
+                    <label class="form__label" for="message">Message</label>
+                    <textarea id="message" name="message" class="form__textarea"
+                              placeholder="Your Message"></textarea>
+                </fieldset>
+                <button type="submit" class="btn form__btn">SUBMIT</button>
+            </form>
+        </section>
+        <section class="map">
+            <h2 class="visually-hidden">
+                Our address
+            </h2>
+        </section>
+    </div>
+</main>
+
+@@include("html/footer.html")
+
+<script src="js/app.min.js"></script>
+</body>
+</html>
