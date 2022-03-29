@@ -1528,3 +1528,16 @@ html::-webkit-scrollbar-thumb {
     padding: 20px;
   }
 }
+
+.map {
+  max-width: 100%;
+  width: 940px;
+  height: 480px;
+  background: url("../img/map.jpg") no-repeat center;
+  margin-bottom: 96px;
+}
+@media (max-width: 860px) {
+  .map {
+    margin-bottom: 65px;
+  }
+}
